@@ -14,8 +14,15 @@ def benzerKelimeler():
     print(oneriler)
 
     # İlk 10 öneriyi göster
+    '''
     for index, oneri in enumerate(oneriler):
         print(index+1, oneri[0])
+    '''
+
+    #Sonuç Rafine
+    for oneri in oneriler:
+        if anahtarKelime in oneri:
+            print("ok")
 
     # İlk 3 öneriyi göster
     '''
