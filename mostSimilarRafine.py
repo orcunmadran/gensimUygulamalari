@@ -1,4 +1,4 @@
-#Most Similar Examples
+#Most Similar Rafine
 
 from gensim.models import KeyedVectors
 
@@ -13,29 +13,11 @@ def benzerKelimeler():
     oneriler = (kelimeVektoru.most_similar(positive=anahtarKelime))
     print(oneriler)
 
-    # İlk 10 öneriyi göster
-    '''
-    for index, oneri in enumerate(oneriler):
-        print(index+1, oneri[0])
-    '''
-
-    #Sonuç Rafine
+    # Önerileri rafine et
     for oneri in oneriler:
-        if anahtarKelime in oneri:
-            print("ok")
+        if anahtarKelime not in oneri[0]:
+            print(oneri[0])
 
-    # İlk 3 öneriyi göster
-    '''
-    for i in range(3):
-        print(oneriler[i][0])
-    '''
-
-    '''
-    for i in range(3):
-        onerilenKelime = oneriler[i][0]
-        print("https://www.google.com.tr/search?q="+onerilenKelime)
-
-    '''
     benzerKelimeler()
 
 benzerKelimeler()
